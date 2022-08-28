@@ -5,3 +5,4 @@
 - Build runtime: Deno
 - Template language: Liquid (Liquid.js)
 - Client side navigation: Hotwire Turbo
+- Deploy: Cloudflare Pages

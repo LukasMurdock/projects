@@ -21,7 +21,7 @@ async function handler(request: Request): Promise<Response> {
 	} else {
 		console.log({ path });
 		// return file path
-		return await fileServer.serveFile(request, `.${path}`);
+		return await fileServer.serveFile(request, `./assets/${path}`);
 	}
 }
 
@@ -38,7 +38,7 @@ async function getFileBasedRoute(pathname: string) {
 	} else {
 		const route = pathname.split('/');
 		try {
-			return await liquidEngine.renderFile(route[1], { title: 'First!' });
+			return await liquidEngine.renderFile(`/assets/${route[1]}`, { title: 'First!' });
 		} catch {
 			console.log(`404: pathname: ${pathname}`);
 			return await liquidEngine.renderFile('404', { title: '404 | Page not found.' });

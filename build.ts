@@ -17,14 +17,14 @@ if (await exists(siteFolder)) {
 }
 
 // Copy assets into site folder
-copySync(assetFolder, `${siteFolder}/assets`);
+copySync(assetFolder, `${siteFolder}`);
 
 const pages = Deno.readDirSync('./pages');
 // Render pages
 for (const page of pages) {
 	if (page.isFile) {
 		console.log('name: ' + page.name);
-		const text = await engine.renderFile(page.name);
+		const text = await engine.renderFile(page.name, { title: 'Lukas Murdock' });
 		Deno.writeTextFile(`${siteFolder}/${page.name}`, text);
 	}
 }
