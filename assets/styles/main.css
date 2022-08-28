@@ -31,6 +31,75 @@ p a:link::-moz-selection {
 	margin-top: 20px;
 }
 
+:root {
+	--shadow-color: 60deg 27% 79%;
+	--shadow-elevation-low: 0.3px 0.5px 0.5px hsl(var(--shadow-color) / 0.27),
+		0.3px 0.7px 0.7px -2px hsl(var(--shadow-color) / 0.2),
+		0.8px 1.5px 1.5px -4px hsl(var(--shadow-color) / 0.13);
+	--shadow-elevation-medium: 0.3px 0.5px 0.5px hsl(var(--shadow-color) / 0.28),
+		0.5px 1px 1px -1.3px hsl(var(--shadow-color) / 0.23),
+		1.4px 2.8px 2.8px -2.7px hsl(var(--shadow-color) / 0.18),
+		3.8px 7.5px 7.6px -4px hsl(var(--shadow-color) / 0.12);
+	--shadow-elevation-high: 0.3px 0.5px 0.5px hsl(var(--shadow-color) / 0.26),
+		0.5px 1px 1px -0.6px hsl(var(--shadow-color) / 0.24),
+		0.9px 1.8px 1.8px -1.1px hsl(var(--shadow-color) / 0.21),
+		1.7px 3.3px 3.3px -1.7px hsl(var(--shadow-color) / 0.19),
+		3px 6px 6px -2.3px hsl(var(--shadow-color) / 0.16),
+		5.1px 10.2px 10.3px -2.9px hsl(var(--shadow-color) / 0.14),
+		8.2px 16.4px 16.5px -3.4px hsl(var(--shadow-color) / 0.11),
+		12.5px 25px 25.2px -4px hsl(var(--shadow-color) / 0.09);
+}
+
+.project-card {
+	background-color: #fff;
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+		Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	color: #1d1d1f;
+	height: 100%;
+	width: 100%;
+	box-sizing: border-box;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	box-shadow: var(--shadow-elevation-high);
+	border-radius: 0.5rem;
+	transition: box-shadow, border 250ms ease-out;
+	border: solid 2px transparent;
+	/* border: solid 2px #f2f2f2; */
+	text-align: center;
+}
+.project-card:hover {
+	border: solid 2px;
+	box-shadow: var(--shadow-elevation-medium);
+	text-decoration: underline;
+}
+.project-card h3 {
+	margin: 0;
+	color: #1d1d1f;
+	font-size: 32px;
+	padding: 30px 20px 0 20px;
+}
+
+.project-card a::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+}
+
+.project-card a {
+	padding: 12px;
+	display: inline-block;
+	text-decoration: none;
+}
+
+.project-card img,
+.project-card svg {
+	padding: 0 20px;
+}
+
 .sr-only {
 	position: absolute;
 	width: 1px;
