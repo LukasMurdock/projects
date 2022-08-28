@@ -1,0 +1,17 @@
+{% layout "default.html" %}
+
+<h1>More Projects</h1>
+<div class="two-columns-sm grid-gap-20">
+	<div>
+		{% render 'project-card.html', title: 'Miami University Explorer', route: '/mue', image:
+		'/assets/icons/mue.svg' %}
+	</div>
+	<div>
+		{% render 'project-card.html', title: 'Virra Marketing', route: '/virra', image:
+		'/assets/icons/virra.svg' %}
+	</div>
+	<div>
+		{% render 'project-card.html', title: 'Bloxsmith Marketplace', route: '/bloxsmith', image:
+		'/assets/icons/bloxsmith.svg' %}
+	</div>
+</div>
