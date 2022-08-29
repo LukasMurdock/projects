@@ -1,9 +1,7 @@
 {% layout "default.html" %}
 
-<h1>Lukas Murdock</h1>
-
 <section>
-	<h2>About Me</h2>
+	<h1>About Me</h1>
 
 	<p>Hi, I’m Lukas. A student exploring design, development, and marketing.</p>
 
@@ -34,28 +32,53 @@
 </section>
 
 <section>
-	<h2>Projects</h2>
+	<h2>Design</h2>
 	<nav class="two-columns-sm grid-gap-20">
-		<div>{% render 'cards/mue' %}</div>
-		<div>{% render 'cards/bloxsmith' %}</div>
-		<div>{% render 'cards/virra' %}</div>
-		{% comment %}
-		<div>
-			{% render 'project-card.html', title: 'Miami University Explorer', route: '/mue', image:
-			'/assets/icons/mue.svg' %}
+		<div class="project-card">
+			<h3><a href="/design/bloxsmith">Bloxsmith Marketplace</a></h3>
+			{% render 'icons/bloxsmith.svg' %}
+		</div>
+		<div class="project-card">
+			<h3><a href="/design/virra">Virra Marketing</a></h3>
+			{% render 'icons/virra.svg' %}
 		</div>
 		<div>
-			{% render 'project-card.html', title: 'Virra Marketing', route: '/virra', image:
-			'/assets/icons/virra.svg' %}
+			<a href="/design">See more design work</a>
+		</div>
+	</nav>
+</section>
+
+<section>
+	<h2>Development</h2>
+	<nav class="two-columns-sm grid-gap-20">
+		<div class="project-card">
+			<h3><a href="/development/mue">Miami University Explorer</a></h3>
+			{% render 'icons/mue.svg' %}
+		</div>
+		<div class="project-card">
+			<h3><a href="/development/virra">Virra Marketing</a></h3>
+			{% render 'icons/virra.svg' %}
 		</div>
 		<div>
-			{% render 'project-card.html', title: 'Bloxsmith Marketplace', route: '/bloxsmith', image:
-			'/assets/icons/bloxsmith.svg' %}
+			<a href="/development">See more development work</a>
 		</div>
-		{% endcomment %}
-		<div>
-			<a href="/projects">See more projects</a>
+	</nav>
+</section>
+
+<section>
+	<h2>Marketing</h2>
+	<nav class="two-columns-sm grid-gap-20">
+		<div class="project-card">
+			<h3><a href="/marketing/abb">ABB</a></h3>
+			{% render 'icons/abb.svg' %}
 		</div>
+		<div class="project-card">
+			<h3><a href="/marketing/loganix">Loganix</a></h3>
+			{% render 'icons/loganix.svg' %}
+		</div>
+		<!-- <div>
+			<a href="/marketing">See more marketing work</a>
+		</div> -->
 	</nav>
 </section>
 

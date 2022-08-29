@@ -22,8 +22,8 @@
 				font-family: 'Montagu Slab';
 				font-style: normal;
 				font-weight: 400;
-				src: local(''), url('./fonts/montagu-slab-v6-latin-regular.woff2') format('woff2'),
-					/* Chrome 26+, Opera 23+, Firefox 39+ */ url('./fonts/montagu-slab-v6-latin-regular.woff')
+				src: local(''), url('/fonts/montagu-slab-v6-latin-regular.woff2') format('woff2'),
+					/* Chrome 26+, Opera 23+, Firefox 39+ */ url('/fonts/montagu-slab-v6-latin-regular.woff')
 						format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 				font-display: 'swap';
 			}
@@ -41,8 +41,8 @@
 				font-family: 'Montagu Slab';
 				font-style: normal;
 				font-weight: 700;
-				src: local(''), url('./fonts/montagu-slab-v6-latin-700.woff2') format('woff2'),
-					/* Chrome 26+, Opera 23+, Firefox 39+ */ url('./fonts/montagu-slab-v6-latin-700.woff')
+				src: local(''), url('/fonts/montagu-slab-v6-latin-700.woff2') format('woff2'),
+					/* Chrome 26+, Opera 23+, Firefox 39+ */ url('/fonts/montagu-slab-v6-latin-700.woff')
 						format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 				font-display: 'swap';
 			}
@@ -93,6 +93,20 @@
 			h2,
 			h3 {
 				font-weight: 400;
+			}
+
+			.main-nav {
+				display: flex;
+				overflow-x: scroll;
+				white-space: nowrap;
+			}
+
+			.main-nav:first-child {
+				display: block;
+			}
+
+			.main-nav a {
+				padding: 4px;
 			}
 
 			a:link,
@@ -176,6 +190,7 @@
 				color: #1d1d1f;
 				font-size: 32px;
 				padding: 30px 20px 0 20px;
+				font-weight: 700;
 			}
 
 			.project-card a::after {
@@ -224,15 +239,19 @@
 		</script>
 	</head>
 	<body>
-		<nav>
-			<a href="/">Home</a>
-			<a href="/projects">Projects</a>
+		<nav class="main-nav">
+			<a href="/"><strong>Lukas Murdock</strong></a>
+			<div>
+				<a href="/design">Design</a>
+				<a href="/development">Development</a>
+				<a href="/marketing">Marketing</a>
+			</div>
 		</nav>
 		
 
-<h1>Virra Marketing</h1>
+<h1>Loganix</h1>
 
-<p>Writing in progress</p>
+<p>Writing in progress.</p>
  <footer>
 	<p><a href="https://lukasmurdock.com/">LukasMurdock.com</a></p>
 </footer>
