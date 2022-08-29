@@ -208,14 +208,16 @@
 				flex-grow: 1;
 				transition: filter 250ms ease-out;
 				/* filter: brightness(40%); */
-				filter: opacity(0%);
+				filter: sepia(100%);
+				/* filter: opacity(0%); */
 				pointer-events: none;
 			}
 
 			.project-card:hover img,
 			.project-card:hover svg {
+				filter: sepia(0%);
 				/* filter: brightness(100%); */
-				filter: opacity(100%);
+				/* filter: opacity(100%); */
 			}
 
 			.grid-gap-20 {
@@ -296,7 +298,9 @@
 	</div>
 </div>
  <footer>
+	<hr />
 	<p><a href="https://lukasmurdock.com/">LukasMurdock.com</a></p>
+	<p><a href="https://github.com/LukasMurdock/projects">GitHub</a></p>
 </footer>
 
 	</body>
