@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Lukas Murdock</title>
+		<meta name="description" content="Projects by Lukas Murdock." />
+
+		<style type="text/css">
+			/* montagu-slab-300 - latin */
+			/* @font-face {
+				font-family: 'Montagu Slab';
+				font-style: normal;
+				font-weight: 300;
+				src: local(''), url('./fonts/montagu-slab-v6-latin-300.woff2') format('woff2'),
+					url('./fonts/montagu-slab-v6-latin-300.woff') format('woff');
+				font-display: 'swap';
+			} */
+			/* montagu-slab-regular - latin */
+			@font-face {
+				font-family: 'Montagu Slab';
+				font-style: normal;
+				font-weight: 400;
+				src: local(''), url('/fonts/montagu-slab-v6-latin-regular.woff2') format('woff2'),
+					/* Chrome 26+, Opera 23+, Firefox 39+ */ url('/fonts/montagu-slab-v6-latin-regular.woff')
+						format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+				font-display: 'swap';
+			}
+			/* montagu-slab-500 - latin */
+			/* @font-face {
+				font-family: 'Montagu Slab';
+				font-style: normal;
+				font-weight: 500;
+				src: local(''), url('./fonts/montagu-slab-v6-latin-500.woff2') format('woff2'),
+						url('./fonts/montagu-slab-v6-latin-500.woff') format('woff');
+				font-display: 'swap';
+			} */
+			/* montagu-slab-700 - latin */
+			@font-face {
+				font-family: 'Montagu Slab';
+				font-style: normal;
+				font-weight: 700;
+				src: local(''), url('/fonts/montagu-slab-v6-latin-700.woff2') format('woff2'),
+					/* Chrome 26+, Opera 23+, Firefox 39+ */ url('/fonts/montagu-slab-v6-latin-700.woff')
+						format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+				font-display: 'swap';
+			}
+			/* montagu-slab-600 - latin */
+			/* @font-face {
+				font-family: 'Montagu Slab';
+				font-style: normal;
+				font-weight: 600;
+				src: local(''), url('./fonts/montagu-slab-v6-latin-600.woff2') format('woff2'),
+					url('./fonts/montagu-slab-v6-latin-600.woff') format('woff');
+				font-display: 'swap';
+			} */
+
+			@media (prefers-color-scheme: dark) {
+				body {
+					color: #fff;
+					background: #000;
+				}
+				a:link {
+					color: #cdf;
+				}
+				a:hover,
+				a:visited:hover {
+					color: #def;
+				}
+				a:visited {
+					color: #dcf;
+				}
+			}
+
+			body {
+				margin: 1em auto;
+				max-width: 42rem;
+				padding: 0 2rem;
+				font-size: 1.4rem;
+				line-height: 2rem;
+				font-family: 'Montagu Slab', Palatino, 'Palatino Linotype', 'Palatino LT STD',
+					'Book Antiqua', Georgia, serif;
+				background-color: #fffff8;
+				color: #5b3f27;
+			}
+			h1,
+			h2,
+			h3 {
+				line-height: 1;
+			}
+
+			h2,
+			h3 {
+				font-weight: 400;
+			}
+
+			.main-nav div {
+				display: flex;
+				overflow-x: scroll;
+				white-space: nowrap;
+			}
+
+			.main-nav > div > a {
+				padding: 12px;
+			}
+
+			a:link,
+			a:visited {
+				color: inherit;
+			}
+			p a:link {
+				text-decoration: none;
+				background: -webkit-linear-gradient(#fffff8, #fffff8),
+					-webkit-linear-gradient(#fffff8, #fffff8),
+					-webkit-linear-gradient(currentColor, currentColor);
+				background: linear-gradient(#fffff8, #fffff8), linear-gradient(#fffff8, #fffff8),
+					linear-gradient(currentColor, currentColor);
+				-webkit-background-size: 0.05em 1px, 0.05em 1px, 1px 1px;
+				-moz-background-size: 0.05em 1px, 0.05em 1px, 1px 1px;
+				background-size: 0.05em 1px, 0.05em 1px, 1px 1px;
+				background-repeat: no-repeat, no-repeat, repeat-x;
+				text-shadow: 0.03em 0 #fffff8, -0.03em 0 #fffff8, 0 0.03em #fffff8, 0 -0.03em #fffff8,
+					0.06em 0 #fffff8, -0.06em 0 #fffff8, 0.09em 0 #fffff8, -0.09em 0 #fffff8, 0.12em 0 #fffff8,
+					-0.12em 0 #fffff8, 0.15em 0 #fffff8, -0.15em 0 #fffff8;
+				background-position: 0% 93%, 100% 93%, 0% 93%;
+			}
+			p a:link::selection,
+			p a:link::-moz-selection {
+				text-shadow: 0.03em 0 #b4d5fe, -0.03em 0 #b4d5fe, 0 0.03em #b4d5fe, 0 -0.03em #b4d5fe,
+					0.06em 0 #b4d5fe, -0.06em 0 #b4d5fe, 0.09em 0 #b4d5fe, -0.09em 0 #b4d5fe, 0.12em 0 #b4d5fe,
+					-0.12em 0 #b4d5fe, 0.15em 0 #b4d5fe, -0.15em 0 #b4d5fe;
+				background: #b4d5fe;
+			}
+
+			.two-columns {
+				display: grid;
+				grid-template-columns: repeat(2, 1fr);
+				margin-top: 20px;
+			}
+
+			:root {
+				--shadow-color: 60deg 27% 79%;
+				--shadow-elevation-low: 0.3px 0.5px 0.5px hsl(var(--shadow-color) / 0.27),
+					0.3px 0.7px 0.7px -2px hsl(var(--shadow-color) / 0.2),
+					0.8px 1.5px 1.5px -4px hsl(var(--shadow-color) / 0.13);
+				--shadow-elevation-medium: 0.3px 0.5px 0.5px hsl(var(--shadow-color) / 0.28),
+					0.5px 1px 1px -1.3px hsl(var(--shadow-color) / 0.23),
+					1.4px 2.8px 2.8px -2.7px hsl(var(--shadow-color) / 0.18),
+					3.8px 7.5px 7.6px -4px hsl(var(--shadow-color) / 0.12);
+				--shadow-elevation-high: 0.3px 0.5px 0.5px hsl(var(--shadow-color) / 0.26),
+					0.5px 1px 1px -0.6px hsl(var(--shadow-color) / 0.24),
+					0.9px 1.8px 1.8px -1.1px hsl(var(--shadow-color) / 0.21),
+					1.7px 3.3px 3.3px -1.7px hsl(var(--shadow-color) / 0.19),
+					3px 6px 6px -2.3px hsl(var(--shadow-color) / 0.16),
+					5.1px 10.2px 10.3px -2.9px hsl(var(--shadow-color) / 0.14),
+					8.2px 16.4px 16.5px -3.4px hsl(var(--shadow-color) / 0.11),
+					12.5px 25px 25.2px -4px hsl(var(--shadow-color) / 0.09);
+			}
+
+			.project-card {
+				background-color: #f9f4ea;
+				/* color: #1d1d1f; */
+				height: 100%;
+				width: 100%;
+				box-sizing: border-box;
+				position: relative;
+				display: flex;
+				flex-direction: column;
+				box-shadow: var(--shadow-elevation-high);
+				border-radius: 0.375rem;
+				transition: box-shadow, border 250ms ease-out;
+				border: solid 2px transparent;
+				/* border: solid 2px #f2f2f2; */
+				text-align: center;
+			}
+			.project-card:hover {
+				border: solid 2px;
+				box-shadow: var(--shadow-elevation-medium);
+				text-decoration: underline;
+			}
+
+			.project-card h3 {
+				margin: 0;
+				font-size: 32px;
+				padding: 30px 20px 0 20px;
+				/* font-weight: 700; */
+			}
+
+			.project-card a::after {
+				content: '';
+				position: absolute;
+				left: 0;
+				top: 0;
+				right: 0;
+				bottom: 0;
+			}
+
+			.project-card a {
+				padding: 12px;
+				display: inline-block;
+				text-decoration: none;
+			}
+
+			.project-card img,
+			.project-card svg {
+				padding: 0 20px;
+				flex-grow: 1;
+				transition: filter 250ms ease-out;
+				/* filter: brightness(40%); */
+				filter: opacity(0%);
+				pointer-events: none;
+			}
+
+			.project-card:hover img,
+			.project-card:hover svg {
+				/* filter: brightness(100%); */
+				filter: opacity(100%);
+			}
+
+			.grid-gap-20 {
+				display: grid;
+				grid-gap: 20px;
+			}
+
+			/* Small */
+			@media (min-width: 640px) {
+				.two-columns-sm {
+					display: grid;
+					grid-template-columns: repeat(2, 1fr);
+					margin-top: 20px;
+				}
+			}
+
+			@media print {
+				body {
+					max-width: none;
+				}
+			}
+		</style>
+		<!-- <link rel="stylesheet" href="/assets/styles/main.css" /> -->
+		<script type="module">
+			import Turbo from 'https://cdn.skypack.dev/@hotwired/turbo';
+		</script>
+	</head>
+	<body>
+		<nav class="main-nav">
+			<a href="/"><strong>Lukas Murdock</strong></a>
+
+			<div>
+				<a href="/design">Design</a>
+				<a href="/development">Development</a>
+				<a href="/marketing">Marketing</a>
+			</div>
+		</nav>
+		
+
+<h1>Marketing</h1>
+
+<p>
+	Marketers understand the feelings of those they seek to serve and look to serve them better. Aside
+	from the actual need-to-buy category, what we buy isn’t products. We buy emotional change.
+</p>
+<p>
+	Marketing is about gaining trust, showing the people you seek to serve the benefit and advantage
+	in outcomes they can expect from doing business with you. It’s being able to speak to people in
+	ways no-one else has.
+</p>
+<p><a href="https://lukasmurdock.com/marketing/">Read more</a></p>
+<br />
+
+<div class="two-columns-sm grid-gap-20">
+	<div class="project-card">
+		<h3><a href="/marketing/abb">ABB</a></h3>
+		<svg aria-hidden="true" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2"><path fill="none" d="M0 0h100v100H0z"/><path d="M54.524 69.141h2.32c6.961-.348 11.833-5.8 11.833-12.296 0-2.205-.464-4.409-1.508-6.149H54.524v18.445ZM41.764 50.58h11.6v18.561h-11.6V50.58Zm24.71-1.16c-1.16-1.624-2.785-2.9-4.525-3.828 2.088-1.508 3.48-3.945 3.48-6.613a8.07 8.07 0 0 0-8.12-8.12h-2.785v18.56h11.95Zm-24.71-18.562h11.6V49.42h-11.6V30.858Zm44.083 38.283h2.32c6.96-.348 11.833-5.8 11.833-12.296 0-2.205-.464-4.409-1.508-6.149H85.847v18.445ZM73.086 50.58h11.6v18.561h-11.6V50.58Zm24.71-1.16c-1.16-1.624-2.785-2.9-4.525-3.828 2.088-1.508 3.48-3.945 3.48-6.613a8.07 8.07 0 0 0-8.12-8.12h-2.784v18.56h11.949Zm-24.71-18.562h11.6V49.42h-11.6V30.858ZM6.613 50.58 0 69.141h9.629l2.784-8.12h6.148V50.58H6.613ZM18.56 30.859h-4.988l-6.612 18.56h11.6V30.86Zm1.16 30.162h6.149l2.784 8.12h9.629L31.67 50.58H19.722v10.44ZM31.323 49.42 24.71 30.858h-4.988V49.42h11.6Z" fill="#ff000f" fill-rule="nonzero"/></svg>
+
+	</div>
+	<div class="project-card">
+		<h3><a href="/marketing/loganix">Loganix</a></h3>
+		<svg aria-hidden="true" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2"><path fill="none" d="M0 0h100v100H0z"/><path d="M0 57.85V31.544c0-.168.136-.304.304-.304h3.974c.168 0 .304.136.304.304V57.85a.303.303 0 0 1-.304.303H.304A.305.305 0 0 1 0 57.85Zm15.403.314c-4.95 0-8.932-3.24-8.932-8.282 0-5.135 3.979-8.467 8.932-8.467 4.903 0 8.932 3.332 8.932 8.467-.004 5.04-4.029 8.282-8.932 8.282Zm4.489-8.332c0-2.914-1.943-4.814-4.49-4.814-2.545 0-4.488 1.896-4.488 4.814 0 2.868 1.943 4.721 4.489 4.721 2.543 0 4.489-1.85 4.489-4.72Zm4.5 13.096c0-1.85.832-3.425 2.914-4.35V58.3c-1.896-.833-2.593-2.036-2.593-3.518 0-1.404.54-2.596 2.325-3.543a.306.306 0 0 0 .11-.443c-.613-.91-.953-1.975-.953-3.185 0-3.654 2.915-6.154 6.804-6.154 1.81 0 5.996.265 6.903.322.11.007.207.071.253.171l1.247 2.636a.303.303 0 0 1-.273.432h-2.162v.232s.831.604.831 2.593c0 3.007-2.592 5.693-6.803 5.693-1.146 0-2.21-.211-3.11-.59a.305.305 0 0 0-.261.011c-.732.393-.979.796-.979 1.368 0 1.018.832 1.757 4.675 1.757 6.385 0 9.025 2.36 9.025 6.153 0 3.654-3.054 6.525-9.025 6.525-5.964 0-8.928-2.546-8.928-5.832Zm4.35-.418c0 1.529 1.342 2.914 4.582 2.914 3.239 0 4.582-1.343 4.582-2.914 0-1.575-1.343-2.96-4.582-2.96-3.24 0-4.582 1.435-4.582 2.96Zm1.157-14.946c0 1.575 1.11 2.775 3.1 2.775 1.989 0 3.1-1.203 3.1-2.775 0-1.571-1.111-2.821-3.1-2.821-1.99 0-3.1 1.25-3.1 2.821Z" fill="#140044" fill-rule="nonzero"/><path d="M48.055 48.168c2.821 0 4.164.832 4.675 1.203h.232v-.739c0-2.36-1.436-3.564-4.675-3.564a9.17 9.17 0 0 0-4.207 1.04.3.3 0 0 1-.418-.15l-1.192-2.772a.302.302 0 0 1 .132-.386c.707-.375 2.964-1.393 6.517-1.393 5.832 0 8.19 3.1 8.19 7.59v8.492a.303.303 0 0 1-.304.303H54.3a.302.302 0 0 1-.293-.225l-.403-1.532h-.232c-.464.693-1.897 2.129-5.693 2.129-4.303 0-6.617-2.221-6.617-5.043.003-2.918 2.41-4.953 6.992-4.953Zm-.003 7.146c2.578 0 4.26-1.436 4.26-2.528 0-1.34-1.686-2.329-4.26-2.329-2.379 0-3.668.943-3.668 2.429 0 1.339 1.14 2.428 3.668 2.428Zm14.417-13.532c.136 0 .257.093.293.225l.003 1.997h.232c1.111-1.575 2.868-2.593 5.693-2.593 4.443 0 7.171 2.775 7.171 7.078v9a.303.303 0 0 1-.303.303h-3.929a.305.305 0 0 1-.303-.303v-8.35c0-2.314-1.297-3.978-3.7-3.978-2.454 0-3.84 1.71-3.84 3.332v8.996a.303.303 0 0 1-.303.303h-3.928a.305.305 0 0 1-.304-.303V42.086c0-.168.136-.304.304-.304h2.914Zm19.845.304v15.403a.303.303 0 0 1-.303.303h-3.929a.305.305 0 0 1-.303-.303V42.086c0-.168.136-.304.303-.304h3.929c.168 0 .303.136.303.304Zm17.378-.175h-3.735a.306.306 0 0 0-.243.121l-2.154 2.879a.301.301 0 0 0 0 .364l1.868 2.496c.122.161.364.161.486 0l4.018-5.374a.302.302 0 0 0-.239-.486Zm-6.128 12.985 2.153 2.879a.306.306 0 0 0 .243.121h3.736c.25 0 .393-.286.243-.486l-4.018-5.374a.305.305 0 0 0-.486 0l-1.867 2.496a.295.295 0 0 0-.004.364Z" fill="#140044" fill-rule="nonzero"/><g transform="matrix(.35713 0 0 .35713 0 31.24)"><path d="M246.96 29.88H236.5c-.7 0-1.1.8-.68 1.36l15.34 20.51c.23.3.23.71 0 1.02l-15.34 20.51a.852.852 0 0 0-.17.51c0 .466.384.85.85.85h10.46c.27 0 .52-.13.68-.34l16.1-21.53a.843.843 0 0 0 0-1.02l-16.1-21.53a.857.857 0 0 0-.68-.34Z" fill="#fff"/><clipPath id="loganix"><path d="M246.96 29.88H236.5c-.7 0-1.1.8-.68 1.36l15.34 20.51c.23.3.23.71 0 1.02l-15.34 20.51a.852.852 0 0 0-.17.51c0 .466.384.85.85.85h10.46c.27 0 .52-.13.68-.34l16.1-21.53a.843.843 0 0 0 0-1.02l-16.1-21.53a.857.857 0 0 0-.68-.34Z"/></clipPath><g clip-path="url(#loganix)"><use xlink:href="#loganix-b" width="83" height="117" transform="matrix(.46843 0 0 .4718 230.383 24.462)"/></g></g><path d="M80.047 35.08a2.439 2.439 0 0 0-2.436 2.435 2.439 2.439 0 0 0 2.436 2.435 2.439 2.439 0 0 0 2.435-2.435 2.439 2.439 0 0 0-2.435-2.436Zm-.918 2.756a.765.765 0 1 1 .002-1.53.765.765 0 0 1-.002 1.53Zm1.036-1.328a.319.319 0 0 1 0-.636c.175 0 .317.143.317.318v.003a.316.316 0 0 1-.314.315h-.003Z" fill="#140044" fill-rule="nonzero"/><defs><image id="loganix-b" width="83" height="117" xlink:href="data:image/jpeg;base64,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"/></defs></svg>
+
+	</div>
+</div>
+ <footer>
+	<p><a href="https://lukasmurdock.com/">LukasMurdock.com</a></p>
+</footer>
+
+	</body>
+</html>
