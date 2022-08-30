@@ -259,6 +259,14 @@
 
 <h1>Miami University Explorer</h1>
 
+<!--
+- What was especially challenging about the problem?
+- What was the solution?
+- What were the trade-offs of the proposed solution?
+- What was your role in it?
+- What did you learn from working on the problem?
+-->
+
 <p>
 	Miami University Explorer is a web application build to explore buildings and courses at Miami
 	University. I built this project from scratch with Remix, Tailwind, Prisma, and SQLite.
@@ -266,7 +274,7 @@
 
 <dl>
 	<dt>Stack</dt>
-	<dd>Remix (React.js/Node.js)</dd>
+	<dd>Remix.js</dd>
 	<dd>SQLite</dd>
 	<dd>Prisma</dd>
 	<dd>Docker, Fly.io</dd>
@@ -302,9 +310,9 @@
 <h2>Lessons</h2>
 
 <p>
-	I did explore the APIs and created all the API functions in TypeScript with Deno. This exploration
-	gave a great deal of learnings as Deno is webby—it implements standard web APIs, so, when you get
-	better at Deno, you get better at the web. And I learned about:
+	I explored the Miami APIs and created all the API functions in TypeScript with Deno. This
+	exploration gave a great deal of learnings as Deno is webby—it implements standard web APIs, so,
+	when you get better at Deno, you get better at the web. And I learned about:
 </p>
 <ul>
 	<li>Transport Layer Security</li>
@@ -312,6 +320,26 @@
 	<li>User Timing API</li>
 	<li>Transfer-Encoding HTTP Headers</li>
 </ul>
+
+<h3>Transport Layer Security</h3>
+
+<p>
+	Trying to fetch the academic terms endpoint in Deno threw an <code>HandshakeFailure error</code>.
+	I found out, Deno does not support weak ciphers. And this server is using an old insecure TLS
+	version that Deno refuses to accept.
+</p>
+<p>
+	I don’t know anything about TLS handshakes or ciphers. But running
+	<code>curl -v https://ws.miamioh.edu/api/academic/banner/v2/academicTerms/current</code> gave this
+	message
+</p>
+<p>
+	<code>
+		// SSL connection using TLSv1.2 / AES256-SHA256<br />
+		// ALPN, server did not agree to a protocol
+	</code>
+</p>
+<p>I came across SSL Labs and ran a test</p>
 
 <p>I learned about Newline delimited JSON (ndjson).</p>
  <footer>
