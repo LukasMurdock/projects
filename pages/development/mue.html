@@ -25,10 +25,7 @@
 
 <h2>Stack decisions</h2>
 
-<p>
-	I wanted to use this project to explore Deno (pronounced Deeno). My original plan was the
-	following stack.
-</p>
+<p>I intended to use this project to explore Deno. My original plan was the following stack.</p>
 
 <ul>
 	<li>Deno</li>
@@ -39,15 +36,40 @@
 </ul>
 
 <p>
+	I started this project with exploring Deno, with an SQLite module and starting writing my own ORM
+	before it became more complex and less interoperable than I wanted it to be. I enjoy the
+	flexibility and experience of Prisma, but Deno support was not there. I had imagined the steps
+	being the following:
+</p>
+<ul>
+	<li>Query data (from API)</li>
+	<li>Map data to schema</li>
+	<li>Write data to database</li>
+	<li>Write JSON files from database</li>
+	<li>Write HTML files from JSON files (Hugo)</li>
+</ul>
+<p>
 	Deno and SQLite would index the courses and buildings. Hugo would quickly build every page I
 	wanted upfront. Tufte.css would handle all styling through semantic HTML. And Autocomplete.js
 	would enable searching for courses with a text input.
 </p>
+<p>
+	But, as it turns out, Hugo cannot build pages from a data source and Prisma had yet to support
+	Deno.
+</p>
 
 <p>
-	I knew I wanted to use JSX to template, Tailwind to style, and Prisma for the ORM. I initially
-	explored using Deno for this project, but it lacked Prisma support at the time. I choose to learn
-	more about Remix, “focused on web standards and modern web app UX”.
+	I spun out a few of the Types and functions I had written into a small Deno script, a Miami
+	University Enrollment Checker that is
+	<a href="https://github.com/LukasMurdock/miami-university-enrollment-checker">
+		available on Github
+	</a>
+	.
+</p>
+
+<p>
+	I knew I wanted to use JSX to template, Tailwind to style, and Prisma for the ORM. I choose to
+	learn more about Remix, “focused on web standards and modern web app UX”.
 </p>
 
 <h2>Lessons</h2>
@@ -60,7 +82,6 @@
 <ul>
 	<li>Transport Layer Security</li>
 	<li>Stream API</li>
-	<li>User Timing API</li>
 	<li>Transfer-Encoding HTTP Headers</li>
 </ul>
 
@@ -82,6 +103,52 @@
 		// ALPN, server did not agree to a protocol
 	</code>
 </p>
-<p>I came across SSL Labs and ran a test</p>
+<p>I came across SSL Labs and ran a test for the server</p>
 
-<p>I learned about Newline delimited JSON (ndjson).</p>
+<ul>
+	<li>This server accepts RC4 cipher, but only with older protocols.</li>
+	<li>This server does not support Forward Secrecy with the reference browsers.</li>
+	<li>This server does not support Authenticated encryption (AEAD) cipher suites.</li>
+	<li>This server supports TLS 1.0 and TLS 1.1.</li>
+</ul>
+<p>
+	The server used an old insecure TLS version that Deno refuses to accept. So fetching had to be
+	done over insecure HTTP.
+</p>
+
+<h3>Stream API</h3>
+
+<p>
+	Streaming seemed like an optimal solution to load large data in chunks as it comes in. I didn’t
+	know where to start to learn about how to do this, so I started digging into the Fetch whatwg spec
+	and crawling for solutions before coming across a series of stream experiments by Dean Hume that
+	helped tremendously in implementing a streaming solution that I ultimately did not use.
+</p>
+
+<h3>Transfer-Encoding HTTP Headers</h3>
+
+<p>
+	I learned about JSON streaming through newline-delimiters. When the Miami API would get over ~5Kb,
+	it would stop sending Content-Length headers and instead send `<code
+		>Transfer-Encoding: chunked</code
+	>` alongside newline-delimited JSON.
+</p>
+
+<p>The Transfer-Encoding headers are:</p>
+
+<ul>
+	<li>Transfer-Encoding: chunked</li>
+	<li>Transfer-Encoding: compress</li>
+	<li>Transfer-Encoding: deflate</li>
+	<li>Transfer-Encoding: gzip</li>
+</ul>
+
+<p>The “chunked” directive:</p>
+<blockquote>
+	Data is sent in a series of chunks. The Content-Length header is omitted in this case and at the
+	beginning of each chunk you need to add the length of the current chunk in hexadecimal format,
+	followed by '\r\n' and then the chunk itself, followed by another '\r\n'. The terminating chunk is
+	a regular chunk, with the exception that its length is zero. It is followed by the trailer, which
+	consists of a (possibly empty) sequence of header fields.
+	<cite>(MDN)</cite>
+</blockquote>
