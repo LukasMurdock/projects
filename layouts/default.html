@@ -72,17 +72,21 @@
 					color: #dcf;
 				}
 			}
-
 			body {
-				margin: 1em auto;
-				max-width: 42rem;
-				padding: 0 2rem;
 				font-size: 1.4rem;
 				line-height: 2rem;
 				font-family: 'Montagu Slab', Palatino, 'Palatino Linotype', 'Palatino LT STD',
 					'Book Antiqua', Georgia, serif;
 				background-color: #fffff8;
 				color: #5b3f27;
+			}
+			::selection {
+				background-color: #f5aa69;
+			}
+			main {
+				margin: 1em auto;
+				max-width: 42rem;
+				padding: 0 2rem;
 			}
 			h1,
 			h2,
@@ -239,11 +243,24 @@
 					max-width: none;
 				}
 			}
+
+			pre {
+				overflow: scroll;
+			}
 		</style>
 		<!-- <link rel="stylesheet" href="/assets/styles/main.css" /> -->
 		<script type="module">
 			import Turbo from 'https://cdn.skypack.dev/@hotwired/turbo';
 		</script>
+		<!-- <script type="module">
+			import * as cursoreffects from 'https://unpkg.com/cursor-effects@latest/dist/esm.js';
+
+			new cursoreffects.rainbowCursor({
+				length: 8,
+				colors: ['#A86C38', '#A87E59', '#2792A8', '#27535C'],
+				size: 4
+			});
+		</script> -->
 	</head>
 	<body>
 		<nav class="main-nav">
@@ -255,6 +272,7 @@
 				<a href="/marketing">Marketing</a>
 			</div>
 		</nav>
-		{% block %}{% endblock %} {% render 'footer.html' %}
+		<main>{% block %}{% endblock %}</main>
+		{% render 'footer.html' %}
 	</body>
 </html>

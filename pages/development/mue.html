@@ -94,15 +94,17 @@
 </p>
 <p>
 	I don’t know anything about TLS handshakes or ciphers. But running
-	<code>curl -v https://ws.miamioh.edu/api/academic/banner/v2/academicTerms/current</code> gave this
+	<pre><code>curl -v https://ws.miamioh.edu/api/academic/banner/v2/academicTerms/current</code></pre> gave this
 	message
 </p>
-<p>
+
+<pre>
 	<code>
-		// SSL connection using TLSv1.2 / AES256-SHA256<br />
-		// ALPN, server did not agree to a protocol
-	</code>
-</p>
+        // SSL connection using TLSv1.2 / AES256-SHA256
+        // ALPN, server did not agree to a protocol
+    </code>
+</pre>
+
 <p>I came across SSL Labs and ran a test for the server</p>
 
 <ul>

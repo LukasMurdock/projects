@@ -6,3 +6,8 @@
 - Template language: Liquid (Liquid.js)
 - Client side navigation: Hotwire Turbo
 - Deploy: Cloudflare Pages
+
+## TODO
+
+- CSS filters are broken on older Safari versions
+- Open links in new tabs
