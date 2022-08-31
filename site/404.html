@@ -83,7 +83,8 @@
 			::selection {
 				background-color: #f5aa69;
 			}
-			main {
+			main,
+			.main-nav {
 				margin: 1em auto;
 				max-width: 42rem;
 				padding: 0 2rem;
@@ -212,16 +213,16 @@
 				flex-grow: 1;
 				transition: filter 250ms ease-out;
 				/* filter: brightness(40%); */
-				filter: sepia(100%);
-				/* filter: opacity(0%); */
+				/* filter: sepia(100%); */
+				filter: opacity(20%);
 				pointer-events: none;
 			}
 
 			.project-card:hover img,
 			.project-card:hover svg {
-				filter: sepia(0%);
+				/* filter: sepia(0%); */
 				/* filter: brightness(100%); */
-				/* filter: opacity(100%); */
+				filter: opacity(100%);
 			}
 
 			.grid-gap-20 {
