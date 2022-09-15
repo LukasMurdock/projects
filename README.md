@@ -11,3 +11,9 @@
 
 - CSS filters are broken on older Safari versions
 - Open links in new tabs
+
+## Dev
+
+```
+deno task dev
+```

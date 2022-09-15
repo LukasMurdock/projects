@@ -89,6 +89,9 @@
 				max-width: 42rem;
 				padding: 0 2rem;
 			}
+			img {
+				max-width: 100%;
+			}
 			h1,
 			h2,
 			h3 {
@@ -98,6 +101,28 @@
 			h2,
 			h3 {
 				font-weight: 400;
+			}
+
+			.phone {
+				padding: 8px;
+				border-radius: 36px;
+				background: #f6f9fc;
+				box-shadow: 0 50px 100px -20px rgb(70 50 93 / 25%), 0 30px 60px -30px rgb(0 0 0 / 30%),
+					inset 0 -2px 6px 0 rgb(63 10 64 / 35%);
+				-webkit-user-select: none;
+				-moz-user-select: none;
+				-ms-user-select: none;
+				user-select: none;
+				overflow: hidden;
+			}
+
+			.phone img {
+				height: 100%;
+				width: 100%;
+				box-sizing: border-box;
+				max-width: 100%;
+				border-radius: 34px;
+				object-fit: cover;
 			}
 
 			.main-nav div {
@@ -277,7 +302,40 @@
 
 <h1>Virra Marketing</h1>
 
-<p>Writing in progress.</p>
+<p>
+	Virra builds tools & services for independent artists to grow their audience, scale up, and
+	operate their music career as a business. I worked with Virra to build a new marketing website and
+	web application to house their agency and software services.
+</p>
+
+<p><a href="/development/virra">Read more about the software development of this project.</a></p>
+
+<h2>Virra App</h2>
+
+<!-- <img src="/images/virra/desktop-tab_home.png" alt="Virra App Dashboard Home Desktop" />
+
+<img src="/images/virra/desktop-tab_find.png" alt="Virra App Find Tab desktop" />
+
+<img src="/images/virra/desktop-connect_match.png" alt="Virra Match desktop" />
+
+<img src="/images/virra/desktop-connect_superfans.png" alt="Virra Superfans desktop" /> -->
+
+<div class="two-columns-sm grid-gap-20">
+	<div class="phone">
+		<img src="/images/virra/mobile-tab_home.png" alt="Virra App Dashboard Home mobile" />
+	</div>
+
+	<div class="phone">
+		<img src="/images/virra/mobile-tab_find.png" alt="Virra App Find Tab mobile" />
+	</div>
+
+	<div class="phone">
+		<img src="/images/virra/mobile-connect_match.png" alt="Virra Match mobile" />
+	</div>
+	<div class="phone">
+		<img src="/images/virra/mobile-connect_superfans.png" alt="Virra Superfans mobile" />
+	</div>
+</div>
 </main>
 		<footer>
 	<hr />
