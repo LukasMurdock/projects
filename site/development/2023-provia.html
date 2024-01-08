@@ -314,62 +314,63 @@
 		</nav>
 		<main>
 
-<h1>Virra Marketing</h1>
+<h1>ProVia</h1>
+
+<p>Planted: 2023</p>
+<p>Writing in progress.</p>
+
+<p>Revamping the ProVia website Vision Board and Where to Buy features.</p>
+
+<dl>
+	<dt>Stack</dt>
+	<dd>Server Language: PHP</dd>
+	<dd>Client Language: JavaScript</dd>
+	<dd>Web framework: WordPress</dd>
+	<dd>CSS framework: Tailwind</dd>
+	<dd>Database: MySQL</dd>
+	<dd>Auth: Ultimate Member</dd>
+</dl>
 
 <p>
-	Virra builds tools & services for independent artists to grow their audience, scale up, and
-	operate their music career as a business. I worked with Virra to build a new marketing website and
-	web application to house their agency and software services.
+	ProVia manufactures professional-class doors, windows, vinyl-siding, manufactured stone, and metal
+	roofing for residential and non-residential use.
+</p>
+<p>
+	ProVia wanted a more easy-to-use CMS for their marketing website that showcases their products and
+	a better Vision Board and Where to Buy implementation.
+</p>
+<p>I had never worked with direct WordPress development before, so I had a lot to learn.</p>
+
+<h2>Design Center: Vision Board</h2>
+
+<p>
+	Across the website, account members can favorite images. The vision board allows members to create
+	boards with their favorite images in a masonry grid with item actions
+</p>
+<ul>
+	<li>Edit selection</li>
+	<li>Edit position</li>
+	<li>Edit ratio</li>
+	<li>Move left</li>
+	<li>Move right</li>
+	<li>Insert left</li>
+	<li>Insert right</li>
+	<li>Remove</li>
+</ul>
+<p>
+	I built the vision board with plain JavaScript, Tailwind, and custom WordPress Data API endpoints.
+	I had to patch html2canvas to save the Vision Board as an image.
 </p>
 
-<p><a href="/development/virra">Read more about the software development of this project.</a></p>
+<h2>Dealer Locations: Where to Buy</h2>
 
-<h2>Virra Marketing</h2>
-
-<div class="two-columns-sm grid-gap-20">
-	<div>
-		<h3>virramarketing v1</h3>
-		<div class="phone">
-			<img src="/images/virra/mobile-marketing-v1.png" alt="Virra Marketing Website v1" />
-		</div>
-	</div>
-
-	<div>
-		<h3>virra.com v2</h3>
-		<div class="phone">
-			<img src="/images/virra/mobile-marketing-v2.png" alt="Virra Marketing Website v2" />
-		</div>
-	</div>
-</div>
-
-<h2>Virra App</h2>
-
-<!-- <div class="full-width">
-	<img src="/images/virra/desktop-tab_home.png" alt="Virra App Dashboard Home Desktop" />
-
-	<img src="/images/virra/desktop-tab_find.png" alt="Virra App Find Tab desktop" />
-
-	<img src="/images/virra/desktop-connect_match.png" alt="Virra Match desktop" />
-
-	<img src="/images/virra/desktop-connect_superfans.png" alt="Virra Superfans desktop" />
-</div> -->
-
-<div class="two-columns-sm grid-gap-20">
-	<div class="phone">
-		<img src="/images/virra/mobile-tab_home.png" alt="Virra App Dashboard Home mobile" />
-	</div>
-
-	<div class="phone">
-		<img src="/images/virra/mobile-tab_find.png" alt="Virra App Find Tab mobile" />
-	</div>
-
-	<div class="phone">
-		<img src="/images/virra/mobile-connect_match.png" alt="Virra Match mobile" />
-	</div>
-	<div class="phone">
-		<img src="/images/virra/mobile-connect_superfans.png" alt="Virra Superfans mobile" />
-	</div>
-</div>
+<p>
+	ProVia wanted to make it easier for customers to find where to buy their products. I built a
+	custom WordPress Data API endpoint to return a list of ProVia dealers. Customers can filter for
+	dealers that provide specific product categories, dealers that have certain features (e.g.,
+	visualization), and a zipcode. I used Alpine.js to handle the state management of the search form
+	and results. The map is built with Google Maps and the Google Maps JavaScript API.
+</p>
 </main>
 		<footer>
 	<hr />

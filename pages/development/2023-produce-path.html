@@ -1,0 +1,114 @@
+{% layout "default.html" %}
+
+<h1>Produce Path</h1>
+
+<p>Planted: 2023</p>
+
+<p><a href="/design/2023-produce-path">Read more about the design of this project.</a></p>
+
+<p>
+	To become the new maintainers of Produce Path, SKYCATCHFIRE was rewriting a legacy ASP.NET/Angular
+	web application to Next.js and the mobile application to React Native.
+</p>
+
+<dl>
+	<dt>Stack</dt>
+	<dd>Language: TypeScript</dd>
+	<dd>Runtime: Node.js</dd>
+	<dd>Web framework: Next.js (React.js)</dd>
+	<dd>Async state management: React Query</dd>
+	<dd>CSS framework: Tailwind</dd>
+	<dd>Database: AWS RDS</dd>
+	<dd>ORM: Prisma</dd>
+	<dd>Auth: AWS Cognito</dd>
+	<dd>Hosting: AWS Amplify</dd>
+	<dd>Storage: AWS S3</dd>
+</dl>
+
+<p>Produce Path is a mobile and web application that combines FM Tracks and FM Engage.</p>
+<h2>What is FM Tracks?</h2>
+<p>
+	FM Tracks is designed for managers operating direct-to-consumer markets. For example, farmers
+	markets, mobile markets, or Community Supported Agriculture (CSA) programs.
+</p>
+<p>
+	Managers use FM Tracks to collect data on sales, customers, and vendors at the market for personal
+	accounting and year-to-year comparisons they can share with advisory boards, funders, and the
+	general public.
+</p>
+<p>
+	The Network feature of FM Tracks allows for all markets connected through a Network to share data
+	collected via FM Tracks with a central Network Manager.
+</p>
+<p>
+	FM Tracks is
+	<a href="https://snaped.fns.usda.gov/library/materials/fm-tracks"
+		>included in the US Department of Agriculture SNAP-Ed Toolkit</a
+	>.
+</p>
+<h2>What is FM Engage?</h2>
+<p>FM Engage allows market consumers to see market locations, hours, and potential offerings.</p>
+
+<h2>Mid-port Authentication</h2>
+
+<p>
+	The authentication in this project was a challenge. The legacy application used ASP.NET for the
+	auth, but the new application required AWS Cognito. Because the legacy application was still in
+	use by the new application for some application logic, the new application had to do a complex
+	dance between
+</p>
+<ul>
+	<li>the browser,</li>
+	<li>the Legacy App API,</li>
+	<li>the Database, and</li>
+	<li>AWS Cognito.</li>
+</ul>
+
+<p>Figuring this out required a few rewrites of the auth logic.</p>
+
+<h2>FM Tracks Daily Data</h2>
+
+<p>
+	To help market managers enter daily data, I designed and built a new interface that surfaces
+	important data points and allows managers to visually get a sense of the market data available in
+	a given month.
+</p>
+<p>To build this, a blend data is needed from</p>
+<ul>
+	<li>market hours,</li>
+	<li>market limited hours,</li>
+	<li>market transactions,</li>
+	<li>market reimbursements, and</li>
+	<li>market post-market reports.</li>
+</ul>
+<p>
+	As this project was a port of an existing application, I poured over the legacy code to determine
+	how things worked. I then designed new HTTP API interfaces to support the new interface and
+	implemented them in the Next.js API routes.
+</p>
+<p>
+	To keep people moving fast, I used React Query to keep any given months data around locally for
+	five minutes.
+</p>
+
+<h2>FM Tracks Quick Search</h2>
+
+<p>
+	At any given time, a market manager may need to quickly find a organization, network, or market.
+	To support this, I built a quick search feature that maintains a client side list of
+	organizations, networks, and markets and allows the user to search through them.
+</p>
+
+<h2>FM Engage Proximity Map</h2>
+
+<p>To help market consumers see market locations, I built a market proximity map.</p>
+<p>
+	Market consumers can specify a location to search, or use their current location using the
+	Geolocation API. If they specify a location to search it will be converted to latitude and
+	longitude coordinates using the Google Geocoding API. An upper and lower bound latitude and
+	longitude is calculated from an approximation of a 25 mile radius the simple approximation of 1
+	degree of latitude being 69 miles and 1 degree of longitude being 69 miles at the equator and 0
+	miles at the poles. The upper and lower bound latitude and longitude is then used to query the
+	database for markets within the approximate 25 mile radius.
+</p>
+<p>The map is built with Google Maps and the Google Maps JavaScript API.</p>

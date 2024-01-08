@@ -2,6 +2,8 @@
 
 <h1>Virra Marketing</h1>
 
+<p>Planted: 2021</p>
+
 <p><a href="/design/virra">Read more about the design of this project.</a></p>
 
 <p>
@@ -11,13 +13,39 @@
 
 <dl>
 	<dt>Stack</dt>
+	<dd>Language: JavaScript</dd>
 	<dd>Runtime: Node.js</dd>
-	<dd>Web framework: Next.js</dd>
+	<dd>Web framework: Next.js (React.js)</dd>
+	<dd>CSS framework: Tailwind</dd>
 	<dd>Database: Firestore</dd>
+	<dd>Auth: Firebase Authentication</dd>
+	<dd>Storage: Cloud Storage for Firebase</dd>
 	<dd>Payments: Stripe</dd>
 	<dd>CMS: Sanity</dd>
 	<dd>Hosting: Vercel</dd>
 </dl>
+
+<h2>Marketing Website</h2>
+
+<p>
+	The marketing website was a redesign of the existing website. The existing website was built with
+	Wix. The new website was built with Next.js and hosted on Vercel.
+</p>
+<p>The team has since moved to a new website built with GoHighLevel for ease-of-use.</p>
+
+<h2>SaaS: Virra Match and Virra Superfans</h2>
+
+<p>Virra was looking to make new software services available on the web.</p>
+<p>
+	Virra Match takes a Spotify song and returns Spotify playlists that match the song with contact
+	information to help artists and managers find new playlists to pitch.
+</p>
+<p>
+	Virra Superfans takes an Instagram handle and returns the handles of the accounts that engage with
+	it the most. The first use case is to help artists and managers find their most engaged fans. The
+	second use case is to help artists and managers find the most engaged fans of similar artists.
+</p>
+<p>The service works on a credit based system.</p>
 
 <h2>Stack decisions</h2>
 
@@ -47,5 +75,24 @@
 	I dove into React and Node, with Next.js and Firestore as a helpful buffer in “serverless”
 	architecture.
 </p>
-<p>Learning about the architecture behind Next.js (AWS Lambda Functions)</p>
+<p>
+	React had already moved to hooks and functional components. I never learned React with class-based
+	components so I can’t compare the two. I can say that I looked at React with class-based
+	components years earlier and felt no desire to learn it. I enjoy JSX and functional components,
+	but the state management leaves a lot to be desired. I learned about the Context API and Redux,
+	and chose not to implement Redux. With the Next.js App Router and frameworks like Remix today the
+	landscape of React state management is changing.
+</p>
+<p>
+	It was fascinating to learn about some of the architecture behind Next.js on Vercel. While the
+	runtime is Node, the production environment is AWS Lambda Functions, while the static pages are
+	placed into S3.
+</p>
+<p>
+	I felt the pains of Firestore. I learned using a “schemaless” database with multiple developers
+	across multiple projects is asking for pain. While it can be managed, given the choice, I would
+	choose a database with a strict schema. I had to learn how to design a de-normalized schema.
+	Designing a de-normalized schema is a skill in itself, and keeping it consistent across multiple
+	collections is a challenge.
+</p>
 <p></p>
